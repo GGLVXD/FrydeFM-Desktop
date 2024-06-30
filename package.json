@@ -1,0 +1,51 @@
+{
+  "name": "frydefm",
+  "version": "1.0.0",
+  "description": "Desktop application for FrydeFM",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "build": "electron-builder",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "discord-rpc": "^4.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^31.1.0"
+  },
+  "build": {
+    "appId": "frydefm.uk.to",
+    "productName": "FrydeFM",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis", 
+      "icon": "assets/cover.ico"
+    },
+    "nsis": {
+      "oneClick": false, 
+      "perMachine": true,
+      "allowElevation": true, 
+      "allowToChangeInstallationDirectory": true, 
+      "createDesktopShortcut": true, 
+      "createStartMenuShortcut": true, 
+      "installerIcon": "assets/cover.ico",
+      "uninstallerIcon": "assets/cover.ico", 
+      "installerHeaderIcon": "assets/cover.png" 
+    }
+  }
+}
